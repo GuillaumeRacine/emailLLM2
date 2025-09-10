@@ -102,8 +102,8 @@ export function LabelManager() {
     )
   }
 
-  const userLabels = labels.filter(l => l.type === 'user')
-  const systemLabels = labels.filter(l => l.type === 'system')
+  const userLabels = labels.filter((l: any) => l.type === 'user')
+  const systemLabels = labels.filter((l: any) => l.type === 'system')
 
   return (
     <div className="space-y-6">
@@ -148,7 +148,7 @@ export function LabelManager() {
             User Labels ({userLabels.length})
           </h3>
           <div className="space-y-2">
-            {userLabels.map((label) => (
+            {userLabels.map((label: any) => (
               <div key={label.id} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
                 <span className="text-gray-900 dark:text-white">{label.name}</span>
                 <button className="text-red-500 hover:text-red-700">
@@ -168,7 +168,7 @@ export function LabelManager() {
             System Labels ({systemLabels.length})
           </h3>
           <div className="space-y-2">
-            {systemLabels.map((label) => (
+            {systemLabels.map((label: any) => (
               <div key={label.id} className="p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
                 <span className="text-gray-900 dark:text-white">{label.name}</span>
               </div>

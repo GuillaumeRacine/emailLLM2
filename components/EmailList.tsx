@@ -46,7 +46,7 @@ export function EmailList() {
             subject: getHeader(email, 'Subject'),
             body: email.snippet,
             labels: getLabelNames(email.labelIds).split(', '),
-            availableLabels: labels.map(l => l.name)
+            availableLabels: labels.map((l: any) => l.name)
           }
         })
       })
@@ -126,7 +126,7 @@ export function EmailList() {
           </div>
         ) : (
           <div className="divide-y divide-gray-200 dark:divide-gray-700">
-            {emails.map((email) => (
+            {emails.map((email: any) => (
               <div key={email.id} className="p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
                 <div className="flex items-start justify-between">
                   <div className="flex-1 min-w-0">

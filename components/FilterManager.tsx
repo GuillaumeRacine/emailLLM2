@@ -73,7 +73,7 @@ export function FilterManager() {
   }
 
   const getLabelName = (labelId: string) => {
-    return labels.find(l => l.id === labelId)?.name || labelId
+    return labels.find((l: any) => l.id === labelId)?.name || labelId
   }
 
   if (loading) {
@@ -131,7 +131,7 @@ export function FilterManager() {
           <p className="text-gray-500 dark:text-gray-400 text-center py-8">No filters configured</p>
         ) : (
           <div className="space-y-4">
-            {filters.map((filter) => (
+            {filters.map((filter: any) => (
               <div key={filter.id} className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
@@ -154,10 +154,10 @@ export function FilterManager() {
                       <div>
                         <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Actions:</span>
                         <ul className="mt-1 text-sm text-gray-700 dark:text-gray-300">
-                          {filter.action.addLabelIds?.map(id => (
+                          {filter.action.addLabelIds?.map((id: string) => (
                             <li key={id}>• Add label: {getLabelName(id)}</li>
                           ))}
-                          {filter.action.removeLabelIds?.map(id => (
+                          {filter.action.removeLabelIds?.map((id: string) => (
                             <li key={id}>• Remove label: {getLabelName(id)}</li>
                           ))}
                           {filter.action.markAsRead && <li>• Mark as read</li>}
