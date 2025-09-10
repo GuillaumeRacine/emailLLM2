@@ -28,7 +28,7 @@ export function EmailList() {
 
   const getLabelNames = (labelIds: string[]) => {
     return labelIds
-      .map(id => labels.find(l => l.id === id)?.name)
+      .map(id => labels.find((l: any) => l.id === id)?.name)
       .filter(Boolean)
       .join(', ')
   }
