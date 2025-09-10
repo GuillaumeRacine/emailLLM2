@@ -23,8 +23,8 @@ export async function POST(request: NextRequest) {
         break
       case 'messages':
         // Clear all message caches for this user
-        const cacheKeys = Array.from((cache as any).cache.keys())
-        cacheKeys.forEach(key => {
+        const cacheKeys = Array.from((cache as any).cache.keys()) as string[]
+        cacheKeys.forEach((key: string) => {
           if (key.startsWith(`messages:${userEmail}`)) {
             cache.delete(key)
           }
@@ -32,9 +32,9 @@ export async function POST(request: NextRequest) {
         break
       case 'all':
         // Clear all caches for this user
-        const allKeys = Array.from((cache as any).cache.keys())
-        allKeys.forEach(key => {
-          if (key.includes(userEmail)) {
+        const allKeys = Array.from((cache as any).cache.keys()) as string[]
+        allKeys.forEach((key: string) => {
+          if (key.includes(userEmail || '')) {
             cache.delete(key)
           }
         })
