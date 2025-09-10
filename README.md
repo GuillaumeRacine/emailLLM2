@@ -103,4 +103,4 @@ Prioritize client emails, flag urgent matters, archive newsletters after labelin
 - **Authentication**: Google OAuth 2.0
 - **AI**: Anthropic Claude API
 - **APIs**: Gmail API
-- **Deployment**: Vercel
+- **Deployment**: Vercel// Trigger redeployment
